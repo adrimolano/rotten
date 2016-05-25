@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
 
+mount_uploader :poster_image_url, ImageUploader
+
   has_many :reviews
 
       validates :title,
@@ -39,5 +41,7 @@ class Movie < ActiveRecord::Base
       errors.add(:release_date, "should be in the past") if release_date > Date.today
     end
   end
+
+ 
 
     end
