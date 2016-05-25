@@ -16,6 +16,13 @@ class UsersController < ApplicationController
       end
 
 
+
+def index
+      @venues = Post.page(params[:page])
+   end
+
+
+   
       protected
 
       def user_params
